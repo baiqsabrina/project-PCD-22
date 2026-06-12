@@ -8,13 +8,13 @@ Kelompok 22:
 
 ### Project Overview
 Pada project PCD ini, kami melakukan eksperimen klasifikasi motif batik menggunakan pendekatan pengolahan citra digital. Motif batik yang diklasifikasikan adalah Megamendung dan Parang, yang memiliki karakteristik visual berbeda — Megamendung dengan pola awan berlapis dan kurva organik, sedangkan Parang dengan pola garis diagonal yang tegas dan berulang. Hal ini bertujuan untuk:
--Menguji kemampuan dalam mengimplementasikan teknik pengolahan citra digital untuk melakukan klasifikasi citra motif batik.
--Memilih tahapan preprocessing yang tepat sesuai dengan karakteristik visual motif batik.
+1. Menguji kemampuan dalam mengimplementasikan teknik pengolahan citra digital untuk melakukan klasifikasi citra motif batik.
+2. Memilih tahapan preprocessing yang tepat sesuai dengan karakteristik visual motif batik.
 
 Eksperimen dilakukan sebanyak 3 kali percobaan dengan penambahan preprocessing secara bertahap:
-Percobaan Pertama : Preprocessing 1
-Percobaan Kedua : Preprocessing 1 + Preprocessing 2
-Percobaan Ketiga : Preprocessing 1 + Preprocessing 2 + Preprocessing 3
+1. Percobaan Pertama : Preprocessing 1
+2. Percobaan Kedua : Preprocessing 1 + Preprocessing 2
+3. Percobaan Ketiga : Preprocessing 1 + Preprocessing 2 + Preprocessing 3
 Dari setiap percobaan, akan dibandingkan akurasi masing-masing model: KNN dan SVM.
 
 ### Import Library
@@ -27,18 +27,18 @@ Link Dataset: https://data.mendeley.com/datasets/5hp2dg7n3m/1
 
 ### Data Understanding
 Setelah data dimuat, dilakukan eksplorasi untuk memahami karakteristik dataset, meliputi:
--Jumlah total citra dan distribusi per kelas motif (Megamendung & Parang)
--Kondisi visual citra (background, pencahayaan, noise, resolusi)
--Sampel citra dari masing-masing kelas motif
+1. Jumlah total citra dan distribusi per kelas motif (Megamendung & Parang)
+2. Kondisi visual citra (background, pencahayaan, noise, resolusi)
+3. Sampel citra dari masing-masing kelas motif
 
 Tahap ini penting untuk menentukan teknik preprocessing yang paling sesuai dengan kondisi data.
 
 ### Preprocessing
 Pemilihan preprocessing didasarkan pada karakteristik visual citra batik yang memiliki pola tekstur kompleks dan variasi pencahayaan. Berikut preprocessing yang digunakan:
 
-P1: Resize + Grayscale + Ekualisasi Histogram + Normalisasi
-P2: Resize + Grayscale + Median Filter + Sharpening
-P3: Resize + Grayscale + Morfologi Opening + Morfologi Closing
+1. P1: Resize + Grayscale + Ekualisasi Histogram + Normalisasi
+2. P2: Resize + Grayscale + Median Filter + Sharpening
+3. P3: Resize + Grayscale + Morfologi Opening + Morfologi Closing
 
 ### Feature Extraction
 Ekstraksi fitur dilakukan menggunakan metode Gray Level Co-occurrence Matrix (GLCM) dengan konfigurasi. Fitur yang diekstrak dari setiap citra meliputi, Contrast, Dissimilarity, Homogeneity, Energy, Correlation, ASM, dan Entropy
