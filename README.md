@@ -1,5 +1,5 @@
 
-## Klasifikasi Motif Batik Megamendung dan Parang Menggunakan Ekstraksi Fitur GLCM dengan Metode KNN dan SVM
+## Klasifikasi Motif Batik Megamendung dan Parang Menggunakan Ekstraksi Fitur GLCM dengan Metode KNN, SVM dan Random Forest
 Kelompok 22: 
 1. Baiq Sabrina Ramadhani (F1D02410040)
 2. Bunga Alma Azzahra M (F1D02410110)
@@ -15,7 +15,7 @@ Eksperimen dilakukan sebanyak 3 kali percobaan dengan penambahan preprocessing s
 1. Percobaan Pertama : Preprocessing 1
 2. Percobaan Kedua : Preprocessing 1 + Preprocessing 2
 3. Percobaan Ketiga : Preprocessing 1 + Preprocessing 2 + Preprocessing 3
-Dari setiap percobaan, akan dibandingkan akurasi masing-masing model: KNN dan SVM.
+Dari setiap percobaan, akan dibandingkan akurasi masing-masing model: KNN, SVM dan Random Forest.
 
 ### Import Library
 Pada tahap ini dilakukan import seluruh library yang dibutuhkan selama proses klasifikasi, mulai dari library pengolahan citra, ekstraksi fitur, hingga pembuatan model machine learning.
@@ -38,7 +38,7 @@ Pemilihan preprocessing didasarkan pada karakteristik visual citra batik yang me
 
 1. P1: Resize + Grayscale + Ekualisasi Histogram + Normalisasi
 2. P2: Resize + Grayscale + Median Filter + Sharpening
-3. P3: Resize + Grayscale + Morfologi Opening + Morfologi Closing
+3. P3: Resize + Grayscale + Morfologi Opening + Thresholding
 
 ### Feature Extraction
 Ekstraksi fitur dilakukan menggunakan metode Gray Level Co-occurrence Matrix (GLCM) dengan konfigurasi. Fitur yang diekstrak dari setiap citra meliputi, Contrast, Dissimilarity, Homogeneity, Energy, Correlation, ASM, dan Entropy
