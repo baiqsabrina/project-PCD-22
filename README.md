@@ -1,4 +1,5 @@
-# Klasifikasi Roti Tawar Berjamur dan Tidak Berjamur Menggunakan Ekstraksi Fitur Tekstur GLCM dengan Perbandingan KNN, SVM, dan Random Forest
+# Sistem Klasifikasi Motif Batik Nusantara berbasis Pipeline Citra Digital
+
 
 ## Nama Anggota
 ###  Lalu Farras Hanif Aslam : F1D02410118
