@@ -176,7 +176,8 @@ def plot_confusion_matrix(dataset, dataset, title):
   print(confusion_matrix)
 ```
 
-Output: Contoh Confusion Matrix
+Output: Contoh Confusion Matrix:
+
 <img width="622" height="567" alt="image" src="https://github.com/user-attachments/assets/2a79cd7f-9ac9-4258-87f1-1b7d3bf610c7" />
 <img width="638" height="567" alt="image" src="https://github.com/user-attachments/assets/502501d9-e754-472b-9788-872040c66c69" />
 <img width="622" height="568" alt="image" src="https://github.com/user-attachments/assets/5e162bad-bdab-4aec-af57-5b913f6f846a" />
