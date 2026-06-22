@@ -1,4 +1,4 @@
-# Klasifikasi Motif Batik Megamendung dan Parang Menggunakan Ekstraksi Fitur dengan Fitur GLCM dengan Metode KNN, SVM, dan Random Forest
+<img width="1355" height="547" alt="image" src="https://github.com/user-attachments/assets/2ef577df-4155-4b38-bda5-c003f20b24b8" /># Klasifikasi Motif Batik Megamendung dan Parang Menggunakan Ekstraksi Fitur dengan Fitur GLCM dengan Metode KNN, SVM, dan Random Forest
 
 
 ## Nama Anggota
@@ -47,7 +47,8 @@ Selanjutnya, Anda diminta untuk melakukan eksplorasi data untuk memahami karakte
 
 Output: Contoh Visualisasi Distribusi Data: 
 
-![image](https://github.com/user-attachments/assets/bcf4e18c-d6a5-4627-a4d3-c4a2fdb35e8c)
+<img width="1355" height="547" alt="image" src="https://github.com/user-attachments/assets/7c9e61c4-94fb-41a0-9810-b779f142a4b4" />
+(https://github.com/user-attachments/assets/bcf4e18c-d6a5-4627-a4d3-c4a2fdb35e8c)
 
 Output: Contoh Sample Data:
 ![image](https://github.com/user-attachments/assets/0084d31f-386e-49f9-9de5-4863ec4d73de)
@@ -176,4 +177,6 @@ def plot_confusion_matrix(dataset, dataset, title):
 ```
 
 Output: Contoh Confusion Matrix
-![image](https://github.com/user-attachments/assets/aec4ac9c-e687-4354-b02d-833caf26db6b)
+<img width="622" height="567" alt="image" src="https://github.com/user-attachments/assets/2a79cd7f-9ac9-4258-87f1-1b7d3bf610c7" />
+<img width="638" height="567" alt="image" src="https://github.com/user-attachments/assets/502501d9-e754-472b-9788-872040c66c69" />
+<img width="622" height="568" alt="image" src="https://github.com/user-attachments/assets/5e162bad-bdab-4aec-af57-5b913f6f846a" />
