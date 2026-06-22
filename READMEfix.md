@@ -1,4 +1,4 @@
-# JUDUL PROJECT PCD
+# Klasifikasi Roti Tawar Berjamur dan Tidak Berjamur Menggunakan Ekstraksi Fitur Tekstur GLCM dengan Perbandingan KNN, SVM, dan Random Forest
 
 ## Nama Anggota
 ###  Lalu Farras Hanif Aslam : F1D02410118
