@@ -1,4 +1,4 @@
-# Sistem Klasifikasi Motif Batik Nusantara berbasis Pipeline Citra Digital
+# Klasifikasi Motif Batik Megamendung dan Parang Menggunakan Ekstraksi Fitur dengan Fitur GLCM dengan Metode KNN, SVM, dan Random Forest
 
 
 ## Nama Anggota
