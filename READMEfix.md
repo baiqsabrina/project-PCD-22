@@ -7,9 +7,9 @@
 ###  Bunga Salma Azzahra     : F1D02410110
 
 # Project Overview
-Pada project PCD ini, Anda akan melakukan experiment kalsifikasi dengan menggunakan dataset yang telah Anda siapkan sebelumnya. Hal ini bertujuan untuk:
-- Menguji kemampuan Anda dalam mengimplemetasikan teknik pengolahan citra digital untuk melakukan klasifikasi citra.
-- Memilih tahapan preprocessing yang tepat sesuai dengan karakteristik data yang ada.
+Pada project PCD ini, kami melakukan eksperimen klasifikasi motif batik menggunakan pendekatan pengolahan citra digital. Motif batik yang diklasifikasikan adalah Megamendung dan Parang, yang memiliki karakteristik visual berbeda — Megamendung dengan pola awan berlapis dan kurva organik, sedangkan Parang dengan pola garis diagonal yang tegas dan berulang. Hal ini bertujuan untuk:
+1. Menguji kemampuan dalam mengimplementasikan teknik pengolahan citra digital untuk melakukan klasifikasi citra motif batik.
+2. Memilih tahapan preprocessing yang tepat sesuai dengan karakteristik visual motif batik.
 
 Pemilihan preprocessing haruslah menggunakan preprocessing yang telah Anda lakukan selama praktikum Modul 1 - 5. Setelah itu, Anda akan melakukan feature extraction dan juga pembuatan model klasifikasi.
 Perlu di perhatikan bahwa yang menjadi acuan pada project ini adalah tepatnya pemilihan `preprocessing` dan proses `extraction feature` yang dilakukan. Jadi, Anda tidak perlu khawatir dengan hasil akhir akurasi yang mungkin tidak bagus. Selain itu, untuk melihat pemahaman Anda dalam menganalisis, Anda akan melakukan eksperimen sebanyak 3 kali percobaan dengan notebook yang berbeda (format notebook terdapat pada template). Pada setiap percobaannya, Anda diharuskan melakukan improvement pada setiap preprocessing yang telah Anda buat sebelumnya. Anda dapat melakukan improvement dengan cara menyesuaikan jumlah preprocessing pada setiap percobaan. Misalnya, project Anda akan menggunakan total 5 Preprocessing (pre1, pre2, pre3, pre4, pre 5), maka:
