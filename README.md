@@ -44,7 +44,7 @@ Selanjutnya, Anda diminta untuk melakukan eksplorasi data untuk memahami karakte
   jumlah.data = []
   jumlah.labels = []
   print(Output: file_name)
-
+```
 Output: Contoh Visualisasi Distribusi Data: 
 
 <img width="1355" height="547" alt="image" src="https://github.com/user-attachments/assets/7c9e61c4-94fb-41a0-9810-b779f142a4b4" />
