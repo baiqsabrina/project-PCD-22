@@ -1,4 +1,4 @@
-<img width="1355" height="547" alt="image" src="https://github.com/user-attachments/assets/2ef577df-4155-4b38-bda5-c003f20b24b8" /># Klasifikasi Motif Batik Megamendung dan Parang Menggunakan Ekstraksi Fitur dengan Fitur GLCM dengan Metode KNN, SVM, dan Random Forest
+# Klasifikasi Motif Batik Megamendung dan Parang Menggunakan Ekstraksi Fitur dengan Fitur GLCM dengan Metode KNN, SVM, dan Random Forest
 
 
 ## Nama Anggota
@@ -36,9 +36,9 @@ Setelah import library, dilanjutkan dengan tahapan membaca dataset. Pada praktik
   data = []
   labels = []
   file_name = []
+```
 
-
-**# Data Understanding**
+# Data Understanding
 Selanjutnya, Anda diminta untuk melakukan eksplorasi data untuk memahami karakteristik data yang digunakan. Anda dapat menampilkan jumlah data, karakteristik data (kondisi background, noise, pencahyaan, dll), distribusi data, sampel data, dan lainnya. Hal ini bertujuan untuk memahami data yang akan digunakan dalam proses klasifikasi, sehingga dapat memilih teknik preprocessing yang tepat ataupun penanganan jika terdapat data yang tidak seimbang. Berikut ini contohnya:
 ``` python
   jumlah.data = []
