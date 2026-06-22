@@ -36,7 +36,8 @@ Setelah import library, dilanjutkan dengan tahapan membaca dataset. Pada praktik
   labels = []
   file_name = []
 
-## Data Understanding
+
+# Data Understanding
 Selanjutnya, Anda diminta untuk melakukan eksplorasi data untuk memahami karakteristik data yang digunakan. Anda dapat menampilkan jumlah data, karakteristik data (kondisi background, noise, pencahyaan, dll), distribusi data, sampel data, dan lainnya. Hal ini bertujuan untuk memahami data yang akan digunakan dalam proses klasifikasi, sehingga dapat memilih teknik preprocessing yang tepat ataupun penanganan jika terdapat data yang tidak seimbang. Berikut ini contohnya:
 ``` python
   jumlah.data = []
@@ -65,13 +66,20 @@ Output: Contoh Image Augmentation
 Selanjutnya, ini dia tahapan paling krusial. Anda dapat melakukan teknik preprocessing yang Anda anggap perlu. Jelaskan alasan Anda menggunakan teknik tersebut, Anda wajib menggunakan preprocessing yang ada pada modul-modul yang telah Anda pelajari sebelumnya selama praktikum. Jika Anda merasa preprocessing yang ada pada praktikum tidak sesuai, maka silahkan diskusikan dengan Asisten masing" untuk mendapatkan pencerahan.
 ``` python
 def prepro1():
-    pass
+    gray = to_grayscale(image)
+    eq = ekualisasi_histogram(gray)
+    norm = normalisasi(eq)
+  return norm
 
-def prepro2():
-    pass
+def prepro2_from_gray(gray):
+    median = median_filter(gray, kernel_size=3)
+    sharp = sharpening(median)
+    return sharp
 
-def prepro3():
-    pass
+def prepro3_from_gray(gray):
+    opened = morphology_opening(gray, kernel_morph)
+    thresh = threshold(opened, nilai=80)
+    return thresh
 ```
 ## Feature Extraction
 Pada tahapan ini, Anda diminta untuk melakukan ekstraksi fitur dengan metode Gray Level Co-occurrence Matrix (GLCM). Dengan GLCM sudut 0, 45, 90, dan 135 derajat, simetris, dan lakukan uji coba dengan distance 1-5. Anda dapat menghitung nilai dari beberapa fitur berikut:
