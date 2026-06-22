@@ -1,12 +1,12 @@
+# Klasifikasi Roti Tawar Berjamur dan Tidak Berjamur Menggunakan Ekstraksi Fitur Tekstur GLCM dengan Perbandingan KNN, SVM, dan Random Forest
 
-## Klasifikasi Motif Batik Megamendung dan Parang Menggunakan Ekstraksi Fitur GLCM dengan Metode KNN, SVM dan Random Forest
-Kelompok 22: 
-1. Baiq Sabrina Ramadhani (F1D02410040)
-2. Bunga Alma Azzahra M (F1D02410110)
-3. Lalu Farras Hanif Aslam (F1D02410118)
-4. Muhammad Asrodi Sazani (F1d02410123)
+## Nama Anggota
+###  Lalu Farras Hanif Aslam : F1D02410118
+###  Baiq Sabrina Ramadhani  : F1D02410040
+###  Muhammad Asrofi Sazani  : F1D02410123
+###  Bunga Salma Azzahra     : F1D02410110
 
-### Project Overview
+# Project Overview
 Pada project PCD ini, kami melakukan eksperimen klasifikasi motif batik menggunakan pendekatan pengolahan citra digital. Motif batik yang diklasifikasikan adalah Megamendung dan Parang, yang memiliki karakteristik visual berbeda — Megamendung dengan pola awan berlapis dan kurva organik, sedangkan Parang dengan pola garis diagonal yang tegas dan berulang. Hal ini bertujuan untuk:
 1. Menguji kemampuan dalam mengimplementasikan teknik pengolahan citra digital untuk melakukan klasifikasi citra motif batik.
 2. Memilih tahapan preprocessing yang tepat sesuai dengan karakteristik visual motif batik.
@@ -17,28 +17,162 @@ Eksperimen dilakukan sebanyak 3 kali percobaan dengan penambahan preprocessing s
 3. Percobaan Ketiga : Preprocessing 1 + Preprocessing 2 + Preprocessing 3
 Dari setiap percobaan, akan dibandingkan akurasi masing-masing model: KNN, SVM dan Random Forest.
 
-### Import Library
-Pada tahap ini dilakukan import seluruh library yang dibutuhkan selama proses klasifikasi, mulai dari library pengolahan citra, ekstraksi fitur, hingga pembuatan model machine learning.
+Lalu dari setiap percobaan, lihatlah bagaimana perbedaan akurasinya untuk setiap model, Random Forest berapa, SVM berapa, KNN berapa. Berikut ini adalah Tahapan Umum yang digunakan dalam Machine Learning.
 
-### Load Data
-Dataset berisi citra motif batik yang dibagi ke dalam dua folder berdasarkan jenis motifnya (label). Pada tahap ini seluruh citra dibaca sekaligus beserta labelnya, kemudian diseragamkan ukurannya agar proses selanjutnya dapat berjalan konsisten.
+~ SELAMAT DATANG DI LAB 1 ~
 
-Link Dataset: https://data.mendeley.com/datasets/5hp2dg7n3m/1
+# IMPORT LIBRARY
+Anda mengimport library yang dibutuhkan di cell code ini, Anda tidak harus mengikuti dan menggunakan seluruh library yang ada pada template. Library pada template adalah library umum yang sekiranya sering digunakan pada Machine Learning dalam konteks klasifikasi, jadi gunakan library yang diperlukan saja ya.
+``` python
+  import library
+  import library as lib
+  import library.library as lib
+  from library.library_yang_saya_butuhkan import library, library
+```
+# Load Data
+Setelah import library, dilanjutkan dengan tahapan membaca dataset. Pada praktikum modul 1 - 5 Anda pernah membaca beberapa image ke dalam code. Pada project ini, Anda tidak hanya akan membaca 1 atau 2 image saja, tetapi ratusan bahkan ribuan image pada dataset yang Anda gunakan. Bukan hanya image, tapi Anda juga akan berurusan dengan label setiap image, jadi sesuaikan code pada template dengan dataset label (label adalah nama setiap folder pada dataset Anda yang berisi image) yang Anda miliki. Pertama-tama lakukanlah data loading (baca dataset) beserta labelnya, Anda bisa melakukan penyeragaman ukuran dari dataset dengan resize, jika ukuran setiap image berbeda pada datset Anda. Misalnya ada yang 100x200, 300x100 maka Anda harus mengubahnya ke ukuran yang sama misalnya 100x100 atau 150x150. Sekedar informasi semakin besar ukuran setiap image, maka proses loadingnya pun akan semakin lama, jadi usahakan juga ukuran image rendah, CMIIW~
+``` python
+  data = []
+  labels = []
+  file_name = []
 
-### Data Understanding
-Setelah data dimuat, dilakukan eksplorasi untuk memahami karakteristik dataset, meliputi:
-1. Jumlah total citra dan distribusi per kelas motif (Megamendung & Parang)
-2. Kondisi visual citra (background, pencahayaan, noise, resolusi)
-3. Sampel citra dari masing-masing kelas motif
 
-Tahap ini penting untuk menentukan teknik preprocessing yang paling sesuai dengan kondisi data.
+# Data Understanding
+Selanjutnya, Anda diminta untuk melakukan eksplorasi data untuk memahami karakteristik data yang digunakan. Anda dapat menampilkan jumlah data, karakteristik data (kondisi background, noise, pencahyaan, dll), distribusi data, sampel data, dan lainnya. Hal ini bertujuan untuk memahami data yang akan digunakan dalam proses klasifikasi, sehingga dapat memilih teknik preprocessing yang tepat ataupun penanganan jika terdapat data yang tidak seimbang. Berikut ini contohnya:
+``` python
+  jumlah.data = []
+  jumlah.labels = []
+  print(Output: file_name)
 
-### Preprocessing
-Pemilihan preprocessing didasarkan pada karakteristik visual citra batik yang memiliki pola tekstur kompleks dan variasi pencahayaan. Berikut preprocessing yang digunakan:
+Output: Contoh Visualisasi Distribusi Data: 
 
-1. P1: Resize + Grayscale + Ekualisasi Histogram + Normalisasi
-2. P2: Resize + Grayscale + Median Filter + Sharpening
-3. P3: Resize + Grayscale + Morfologi Opening + Thresholding
+![image](https://github.com/user-attachments/assets/bcf4e18c-d6a5-4627-a4d3-c4a2fdb35e8c)
 
-### Feature Extraction
-Ekstraksi fitur dilakukan menggunakan metode Gray Level Co-occurrence Matrix (GLCM) dengan konfigurasi. Fitur yang diekstrak dari setiap citra meliputi, Contrast, Dissimilarity, Homogeneity, Energy, Correlation, ASM, dan Entropy
+Output: Contoh Sample Data:
+![image](https://github.com/user-attachments/assets/0084d31f-386e-49f9-9de5-4863ec4d73de)
+
+# Data Preparation
+## Data Augmentation
+Pada tahapan ini, Anda diwajibkan untuk menerapkan teknik image augmentation untuk menambah jumlah data, HANYA JIKA data Anda berada di bawah rentang 70-100. Anda bisa melakukan image Augmentation dengan teknik yang ada pada Modul 1.
+``` python
+  augmented.data = []
+  augmented.labels = []
+  print(Output: file_name)
+```
+Output: Contoh Image Augmentation
+![image](https://github.com/user-attachments/assets/9ea656a7-a69c-47fa-98fc-2a598b81c3a0)
+
+## Preprocessing
+Pada tahap ini dilakukan proses preprocessing untuk meningkatkan kualitas citra sebelum dilakukan ekstraksi fitur. Tujuan preprocessing adalah mengurangi gangguan pada citra, menyeragamkan karakteristik data, serta menonjolkan informasi penting yang dapat membantu proses klasifikasi. Teknik preprocessing yang digunakan harus disesuaikan dengan karakteristik dataset, seperti kondisi pencahayaan, keberadaan noise, variasi warna, maupun perbedaan ukuran objek pada citra.
+
+Beberapa teknik yang dapat diterapkan antara lain grayscale conversion untuk menyederhanakan informasi warna, noise reduction menggunakan filtering untuk mengurangi gangguan pada citra, histogram equalization untuk meningkatkan kontras, thresholding untuk memisahkan objek dari latar belakang, serta normalisasi ukuran citra agar seluruh data memiliki dimensi yang seragam. Setiap teknik yang digunakan harus disertai alasan pemilihan dan analisis pengaruhnya terhadap hasil klasifikasi.
+
+Pada penelitian ini, preprocessing dilakukan secara bertahap dalam beberapa percobaan. Setiap percobaan menambahkan atau memperbaiki teknik preprocessing yang digunakan sebelumnya sehingga dapat dianalisis pengaruhnya terhadap kualitas fitur yang dihasilkan dan performa model klasifikasi.
+
+``` python
+def prepro1():
+    gray = to_grayscale(image)
+    eq = ekualisasi_histogram(gray)
+    norm = normalisasi(eq)
+  return norm
+
+def prepro2_from_gray(gray):
+    median = median_filter(gray, kernel_size=3)
+    sharp = sharpening(median)
+    return sharp
+
+def prepro3_from_gray(gray):
+    opened = morphology_opening(gray, kernel_morph)
+    thresh = threshold(opened, nilai=80)
+    return thresh
+```
+## Feature Extraction
+Pada tahapan ini, Anda diminta untuk melakukan ekstraksi fitur dengan metode Gray Level Co-occurrence Matrix (GLCM). Dengan GLCM sudut 0, 45, 90, dan 135 derajat, simetris, dan lakukan uji coba dengan distance 1-5. Anda dapat menghitung nilai dari beberapa fitur berikut:
+
+- Contrast
+- Dissimilarity
+- Homogeneity
+- Energy
+- Correlation
+- Entropy
+- ASM
+``` python
+def glcm(image, derajat):
+ ...........
+```
+
+## Feature Extraction
+Pada tahapan ini, dilakukan ekstraksi fitur dengan metode **Gray Level Co-occurrence Matrix (GLCM)**. GLCM dihitung dengan sudut 0°, 45°, 90°, dan 135° (simetris), serta dilakukan uji coba dengan distance 1-5. Fitur yang dihitung meliputi:
+
+- Contrast
+- Dissimilarity
+- Homogeneity
+- Energy
+- Correlation
+- Entropy
+- ASM
+
+``` python
+def glcm(image, derajat):
+    ...........
+```
+
+## Feature Selection
+Pada tahap ini, Anda diminta untuk melakukan seleksi fitur. Anda dapat menggunakan teknik seleksi fitur seperti correlation, PCA, atau teknik seleksi fitur lain yang Anda ketahui. NAH PADA TEMPLATE CODE FEATURE SELECTION MENGGUNAKAN CORRELATION YGY.
+``` python
+correlation = hasilEkstrak.drop(columns=['Label','Filename']).corr()
+......
+```
+
+## Splitting Data
+Pada tahap ini, Anda diminta untuk membagi data menjadi data training dan data testing. Anda dapat menggunakan perbandingan 80:20 atau 70:30 atau 90:10.
+``` python
+Dataset, Dataset, Dataset, Dataset = train_test_split(Dataset, y, test_size=0.2, random_state=42)
+print(Dataset.shape)
+print(Dataset.shape)
+```
+
+## Normalization
+Pada tahap ini, Anda diminta untuk melakukan normalisasi data. Anda dapat menggunakan teknik normalisasi standarization atau min-max normalization.
+``` python
+Dataset = (Dataset - Dataset.mean()) / Dataset.std()
+Dataset = (Dataset - Dataset.mean()) / Dataset.std()
+```
+
+# Modeling
+Pada tahap ini, Anda diminta untuk membuat model klasifikasi. Berikut merupakan model yang dapat digunakan:
+- K-Nearest Neighbors (KNN)
+- Support Vector Machine (SVM)
+- Random Forest
+
+Gunakan akurasi sebagai metrik dalam menampilkan hasil klasifikasi.
+```python
+# Train Random Forest Classifier
+rf.fit(dataset, dataset)
+# Train SVM Classifier
+svm.fit(dataset, dataset)
+# Train KNN Classifier
+knn.fit(dataset, dataset)
+
+def inidiaClassificationReport(dataset, dataset):
+	print(classification_report(dataset, dataset))
+
+```
+Output: Contoh Classsification Report
+|               | Accuracy | Precision | Recall   | F1-Score |
+| ------------- | -------- | --------- | -------- | -------- |
+| KNN           | 0.948667 | 0.948664  | 0.948667 | 0.948504 |
+| SVM           | 0.976333 | 0.976319  | 0.976333 | 0.976333 |
+| Random Forest | 0.959667 | 0.959822  | 0.959667 | 0.959615 |
+
+# Evaluation
+Pada bagian ini, Anda perlu mengevaluasi model klasifikasi yang telah Anda buat dengan menampilkan Confusion Matrix, dan Clasification Report: Accuracy, Precision, Recall, F1 Score. **Jelaskan hasil evaluasi yang Anda dapatkan dan berikan analisis mengenai hasil evaluasi tersebut**.
+
+``` python
+
+def plot_confusion_matrix(dataset, dataset, title):
+  print(confusion_matrix)
+```
+
+Output: Contoh Confusion Matrix
+![image](https://github.com/user-attachments/assets/aec4ac9c-e687-4354-b02d-833caf26db6b)
