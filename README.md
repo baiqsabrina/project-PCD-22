@@ -38,7 +38,7 @@ Setelah import library, dilanjutkan dengan tahapan membaca dataset. Pada praktik
   file_name = []
 
 
-# Data Understanding
+**# Data Understanding**
 Selanjutnya, Anda diminta untuk melakukan eksplorasi data untuk memahami karakteristik data yang digunakan. Anda dapat menampilkan jumlah data, karakteristik data (kondisi background, noise, pencahyaan, dll), distribusi data, sampel data, dan lainnya. Hal ini bertujuan untuk memahami data yang akan digunakan dalam proses klasifikasi, sehingga dapat memilih teknik preprocessing yang tepat ataupun penanganan jika terdapat data yang tidak seimbang. Berikut ini contohnya:
 ``` python
   jumlah.data = []
